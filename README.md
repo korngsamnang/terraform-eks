@@ -7,7 +7,7 @@ This repository contains Terraform configurations to provision a Jenkins server 
 
 ## Directory Structure
 
-```
+```bash
 terraform-eks/
 │── eks/ # Terraform configuration for EKS
 │ ├── .gitignore # Git ignore file
@@ -45,31 +45,31 @@ Ensure you have the following installed on your local machine:
 
 1. Navigate to the jenkins-server directory:
 
-```
+```bash
 cd terraform-eks/jenkins-server
 ```
 
 2. Initialize Terraform:
 
-```
+```bash
 terraform init
 ```
 
 3. Plan the deployment
 
-```
+```bash
 terraform plan
 ```
 
 4. Apply the changes to deploy Jenkis:
 
-```
+```bash
 terraform apply -auto-approve
 ```
 
 5. Once completed, retrieve the Jenkins server IP:
 
-```
+```bash
 terraform output jenkins_ip
 ```
 
@@ -88,37 +88,37 @@ KS can be deployed either:
 
 1. Navigate to the `eks` directory:
 
-```
+```bash
 cd terraform-eks/eks
 ```
 
 2. Initialize Terraform"
 
-```
+```bash
 terraform init
 ```
 
 3. Plan the deployment:
 
-```
+```bash
 terraform plan
 ```
 
 4. Apply the Terraform configuration to create the EKS cluster:
 
-```
+```bash
 terraform apply -auto-approve
 ```
 
 5. Retrieve the Kubernetes configuration to interact with the cluster:
 
-```
+```bash
 aws eks update-kubeconfig --region <your-region> --name <eks-cluster-name>
 ```
 
 6. Verify the cluster is running:
 
-```
+```bash
 kubectl get nodes
 ```
 
@@ -135,14 +135,14 @@ To destroy the created resources:
 
 -   Jenkins Server:
 
-```
+```bash
 cd terraform-eks/jenkins-server
 terraform destroy -auto-approve
 ```
 
 -   EKS cluster:
 
-```
+```bash
 cd terraform-eks/eks
 terraform destroy -auto-approve
 ```
